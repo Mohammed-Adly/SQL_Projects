@@ -232,28 +232,7 @@ Month   | total_laid_off
 
 ---
 
-## 11. Rolling total of layoffs over time
-
-```sql
-WITH Rolling_Total AS (
-    SELECT
-        SUBSTRING(`date`,1,7) AS `Month`,
-        SUM(total_laid_off) AS total_off
-    FROM layoffs_staging
-    WHERE SUBSTRING(`date`,1,7) IS NOT NULL
-    GROUP BY `Month`
-    ORDER BY `Month` ASC
-)
-SELECT 
-    `Month`,
-    SUM(total_off) OVER(ORDER BY `Month` ASC) AS rolling_total
-FROM Rolling_Total;
-```
-
-
----
-
-## 12. Top 5 companies with the highest layoffs per year
+## 11. Top 5 companies with the highest layoffs per year
 
 ```sql
 WITH company_year AS (
