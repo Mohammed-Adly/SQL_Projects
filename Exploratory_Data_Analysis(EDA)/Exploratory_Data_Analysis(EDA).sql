@@ -24,19 +24,7 @@ WHERE
 -- total_companies
 -- 116
 
--- 3. Top 6 companies with the highest total layoffs in 2023
-SELECT 
-    company,
-    SUM(total_laid_off) AS total_laid_off
-FROM layoffs_staging
-WHERE YEAR(`date`) = 2023
-GROUP BY company
-ORDER BY total_laid_off DESC
-LIMIT 6;
-
--- Image: company_total_laid_off_2023.png
-
--- 4. How many companies had 100% layoffs in 2023?
+-- 3. How many companies had 100% layoffs in 2023?
 SELECT COUNT(company) AS total_companies
 FROM layoffs_staging
 WHERE percentage_laid_off = 1
@@ -46,7 +34,7 @@ AND YEAR(`date`) = 2023;
 -- total_companies
 -- 14
 
--- 5. Top 5 companies with the highest total layoffs
+-- 4. Top 5 companies with the highest total layoffs
 SELECT
     company,
     SUM(total_laid_off) AS total_laid_off
@@ -63,7 +51,7 @@ LIMIT 5;
 -- Salesforce  | 10090
 -- Microsoft   | 10000
 
--- 6. Start date and end date of layoffs data
+-- 5. Start date and end date of layoffs data
 SELECT
     MIN(`date`) AS start_date,
     MAX(`date`) AS end_date
@@ -73,7 +61,7 @@ FROM layoffs_staging;
 -- start_date  | end_date
 -- 2020-03-11  | 2023-03-06
 
--- 7. Top 10 industries with the highest total layoffs
+-- 6. Top 10 industries with the highest total layoffs
 SELECT
     industry,
     SUM(total_laid_off) AS total_laid_off
@@ -95,7 +83,7 @@ LIMIT 10;
 -- Travel         | 17159
 -- Hardware       | 13828
 
--- 8. Top 7 countries with the highest total layoffs
+-- 7. Top 7 countries with the highest total layoffs
 SELECT
     country,
     SUM(total_laid_off) AS total_laid_off
@@ -113,7 +101,7 @@ ORDER BY total_laid_off DESC;
 -- Germany        | 8701
 -- United Kingdom | 6398
 
--- 9. Total layoffs per year
+-- 8. Total layoffs per year
 SELECT
     YEAR(`date`) AS year,
     SUM(total_laid_off) AS total_laid_off
@@ -129,7 +117,7 @@ ORDER BY year ASC;
 -- 2022  | 160661
 -- 2023  | 125677
 
--- 10. Top 10 funding stages with the highest total layoffs
+-- 9. Top 10 funding stages with the highest total layoffs
 SELECT
     stage,
     SUM(total_laid_off) AS total_laid_off
@@ -152,7 +140,7 @@ LIMIT 10;
 -- Private Equity | 7957
 -- Series H       | 7244
 
--- 11. Total layoffs in January of each year
+-- 10. Total layoffs in January of each year
 SELECT
     SUBSTRING(`date`,1,7) AS `Month`,
     SUM(total_laid_off) AS total_laid_off
@@ -168,7 +156,7 @@ ORDER BY `Month` ASC;
 -- 2022-01 | 510
 -- 2023-01 | 84714
 
--- 12. Rolling total of layoffs over time
+-- 11. Rolling total of layoffs over time
 WITH Rolling_Total AS (
     SELECT
         SUBSTRING(`date`,1,7) AS `Month`,
@@ -186,7 +174,7 @@ FROM Rolling_Total;
 -- Output:
 -- Image: Rolling_Total.png  
 
--- 13. Top 5 companies with the highest layoffs per year
+-- 12. Top 5 companies with the highest layoffs per year
 WITH company_year AS (
     SELECT 
         company,
