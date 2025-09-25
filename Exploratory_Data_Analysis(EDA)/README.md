@@ -1,4 +1,4 @@
-# Exploratory Data Analysis (EDA) on Layoffs Dataset
+# Exploratory Data Analysis (EDA) on Layoffs
 
 This project explores layoffs data through a series of SQL queries.  
 Each section presents a key **question**, the corresponding **SQL query**, and the **results**.
@@ -54,9 +54,6 @@ GROUP BY company
 ORDER BY total_laid_off DESC
 LIMIT 6;
 ```
-
-**Visualization:**  
-![Top Companies 2023](company_total_laid_off_2023.png)
 
 ---
 
@@ -266,8 +263,6 @@ SELECT
 FROM Rolling_Total;
 ```
 
-**Visualization:**  
-![Rolling Totals](Rolling_Total.png)
 
 ---
 
@@ -309,4 +304,4 @@ Google       | 2023 | 12000          | 1
 
 ---
 
-📌 Each query provides a different perspective on layoffs, helping uncover trends across time, industries, companies, and funding stages.
+Each query provides a different perspective on layoffs, helping uncover trends across time, industries, companies, and funding stages.
