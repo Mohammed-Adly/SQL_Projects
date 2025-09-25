@@ -2,8 +2,8 @@
 
 This project explores layoffs data through a series of SQL queries.  
 Each section presents a key **question**, the corresponding **SQL query**, and the **results**.
+Check them out here: [Exploratory_Data_Analysis(EDA)](Exploratory_Data_Analysis(EDA).sql)
 
-**SQL queries?** Check them out here: [Exploratory_Data_Analysis(EDA)](Exploratory_Data_Analysis(EDA).sql)
 ---
 
 ## 1. What is the maximum total laid off and the maximum percentage laid off?
