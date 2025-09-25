@@ -5,10 +5,6 @@ Check them out here: [data_cleaning.sql](data_cleaning.sql)
 
 ---
 
-## Background
-
-This project was inspired by the need to clean and prepare raw data for analysis. The dataset contains information about layoffs from various companies worldwide, including details like company names, industries, locations, and the number of employees laid off. The cleaning process ensures the data is reliable and ready for further exploration.
-
 ### The questions I wanted to answer through my SQL queries were:
 
 1. **How can we identify and remove duplicate records?**
@@ -159,3 +155,4 @@ Throughout this project, I enhanced my SQL skills and gained valuable experience
 ## Conclusions
 
 This project was a great opportunity to practice data cleaning techniques using SQL. The cleaned dataset is now ready for further analysis, and the skills I gained will be invaluable for future data projects. Clean data is the foundation of any successful analysis, and this project reinforced that principle.
+
