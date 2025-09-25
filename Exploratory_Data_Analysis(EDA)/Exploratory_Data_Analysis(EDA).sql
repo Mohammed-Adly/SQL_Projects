@@ -156,24 +156,6 @@ ORDER BY `Month` ASC;
 -- 2022-01 | 510
 -- 2023-01 | 84714
 
--- 11. Rolling total of layoffs over time
-WITH Rolling_Total AS (
-    SELECT
-        SUBSTRING(`date`,1,7) AS `Month`,
-        SUM(total_laid_off) AS total_off
-    FROM layoffs_staging
-    WHERE SUBSTRING(`date`,1,7) IS NOT NULL
-    GROUP BY `Month`
-    ORDER BY `Month` ASC
-)
-SELECT 
-    `Month`,
-    SUM(total_off) OVER(ORDER BY `Month` ASC) AS rolling_total
-FROM Rolling_Total;
-
--- Output:
--- Image: Rolling_Total.png  
-
 -- 12. Top 5 companies with the highest layoffs per year
 WITH company_year AS (
     SELECT 
