@@ -43,22 +43,8 @@ total_companies
 
 ---
 
-## 3. Top 6 companies with the highest total layoffs in 2023
 
-```sql
-SELECT 
-    company,
-    SUM(total_laid_off) AS total_laid_off
-FROM layoffs_staging
-WHERE YEAR(`date`) = 2023
-GROUP BY company
-ORDER BY total_laid_off DESC
-LIMIT 6;
-```
-
----
-
-## 4. How many companies had 100% layoffs in 2023?
+## 3. How many companies had 100% layoffs in 2023?
 
 ```sql
 SELECT COUNT(company) AS total_companies
@@ -75,7 +61,7 @@ total_companies
 
 ---
 
-## 5. Top 5 companies with the highest total layoffs
+## 4. Top 5 companies with the highest total layoffs
 
 ```sql
 SELECT
@@ -99,7 +85,7 @@ Microsoft   | 10000
 
 ---
 
-## 6. Start date and end date of layoffs data
+## 5. Start date and end date of layoffs data
 
 ```sql
 SELECT
@@ -116,7 +102,7 @@ start_date  | end_date
 
 ---
 
-## 7. Top 10 industries with the highest total layoffs
+## 6. Top 10 industries with the highest total layoffs
 
 ```sql
 SELECT
@@ -145,7 +131,7 @@ Hardware        | 13828
 
 ---
 
-## 8. Top 7 countries with the highest total layoffs
+## 7. Top 7 countries with the highest total layoffs
 
 ```sql
 SELECT
@@ -170,7 +156,7 @@ United Kingdom  | 6398
 
 ---
 
-## 9. Total layoffs per year
+## 8. Total layoffs per year
 
 ```sql
 SELECT
@@ -193,7 +179,7 @@ year  | total_laid_off
 
 ---
 
-## 10. Top 10 funding stages with the highest total layoffs
+## 9. Top 10 funding stages with the highest total layoffs
 
 ```sql
 SELECT
@@ -223,7 +209,7 @@ Series H        | 7244
 
 ---
 
-## 11. Total layoffs in January of each year
+## 10. Total layoffs in January of each year
 
 ```sql
 SELECT
@@ -246,7 +232,7 @@ Month   | total_laid_off
 
 ---
 
-## 12. Rolling total of layoffs over time
+## 11. Rolling total of layoffs over time
 
 ```sql
 WITH Rolling_Total AS (
@@ -267,7 +253,7 @@ FROM Rolling_Total;
 
 ---
 
-## 13. Top 5 companies with the highest layoffs per year
+## 12. Top 5 companies with the highest layoffs per year
 
 ```sql
 WITH company_year AS (
